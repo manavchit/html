@@ -5,13 +5,16 @@ pipeline {
         nodejs 'nodejs'
     }
     
-    stages {
-        stage("Setup Dependencies") {
-            steps {
-                git branch: "main", url: "https://github.com/manavchit/html.git"
-                bat "npm install --verbose --omit=optional"
+ stage('Install Dependencies') {
+    steps {
+        script {
+            if (fileExists('package.json')) {
+                sh 'npm install --verbose --omit=optional'
+            } else {
+                error 'package.json not found, skipping npm install'
             }
         }
+    
         
         stage("Build Project") {
             steps {
