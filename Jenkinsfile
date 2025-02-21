@@ -35,7 +35,7 @@ pipeline {
             steps{
                 script{
                     def netlifySiteID = '8ed69f4e-a423-4bb6-b83f-e25890c100d5'
-                    def netlifyAccessToken = 'nfp_24YTxaUm5gk7D3Cdj9kUVkcQfRZ2BH3C9a91'
+                    def netlifyAccessToken = 'nfp_fYaKF29EEguLXaxCXp6BG5Y7UwLLNLDw7224'
                     
                     bat "npm install netlify-cli --save-dev"
                     bat "npx netlify deploy --site ${netlifySiteID} --auth ${netlifyAccessToken} --dir ./build --prod"
