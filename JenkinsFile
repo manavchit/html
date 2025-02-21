@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage("Setup Dependencies") {
             steps {
-                git branch: "main", url: "https://github.com/manavchit/9.1cj.git"
+                git branch: "main", url: "https://github.com/manavchit/html.git"
                 bat "npm install --verbose --omit=optional"
             }
         }
